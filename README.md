@@ -12,8 +12,8 @@
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
-cd invoiceflow
+git clone https://github.com/Somayeh-Bahari/invoiceflow-api.git
+cd invoiceflow-api
 ```
 
 ### 2. Create a virtual environment
