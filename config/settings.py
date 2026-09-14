@@ -41,8 +41,7 @@ INSTALLED_APPS = [
     'core',
     'accounts',
     'django_filters',
-    "drf_spectacular",
-
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -133,10 +132,20 @@ MAILERS = {
 }
 
 AUTH_USER_MODEL = "accounts.User"
+
 LOGIN_REDIRECT_URL = "/api/invoices/"
 LOGOUT_REDIRECT_URL = "/api-auth/login/"
 
+
 REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        (
+            "rest_framework_simplejwt.authentication."
+            "JWTAuthentication"
+        ),
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+
     "DEFAULT_FILTER_BACKENDS": [
         "django_filters.rest_framework.DjangoFilterBackend",
         "rest_framework.filters.SearchFilter",
